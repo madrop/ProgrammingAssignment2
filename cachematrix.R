@@ -5,6 +5,7 @@
 
 ## MakeCacheMatrix initializes a "wrapper object" (actually it is a string)
 ##which stores the matrix a serves as a cache for inverse of this matrix
+## argument x should be a matrix created by matrix() function
 makeCacheMatrix <- function(x = matrix()) {
   ##variables in the environment of particular instance of makeCacheMatrix function 
   inverseMatrix <- NULL
@@ -28,7 +29,10 @@ makeCacheMatrix <- function(x = matrix()) {
 
 
 
-## Write a short comment describing this function
+## Function that calculates the inverse of a matrix stored in wrapper object,
+## which is created by other function (makeCacheMatrix)
+## Argument x to cacheSolve should be a wrapper object e.g return value from makeCacheMatrix(), 
+## not a matrix created by matrix() function
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
   
